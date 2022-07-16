@@ -8,6 +8,8 @@ namespace BakeryVendor.Models
     public string Title { get; set; }
     public string Description { get; set; }
     public int Price { get; set; }
+    public int Loaves { get; set; }
+    public int Pastry { get; set; }
     public DateTime Date { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
@@ -52,6 +54,8 @@ namespace BakeryVendor.Models
     {
       Title = title;
       Description  = description;
+      Loaves = numberLoaves;
+      Pastry = numberPastry;
       Price = CalculateOrderTotal(numberLoaves, numberPastry);
       Date = date;
       _instances.Add(this);

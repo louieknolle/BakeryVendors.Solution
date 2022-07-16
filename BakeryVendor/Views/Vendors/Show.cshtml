@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BakeryVendor.Models;
+
+<h3>All current orders for this vendor:</h3>
+
+<ol>
+@foreach (Order order in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+}
+</ol>
+
+<p><a href='/categories/@Model["category"].Id/items/new'>Add a new item</a></p>
+<p><a href='/categories'>Return to category list</a></p>
+<p><a href='/'>Return to Main Page</a></p>
