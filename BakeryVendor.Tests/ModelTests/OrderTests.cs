@@ -22,11 +22,11 @@ namespace BakeryVendor.Tests
     }
 
     [TestMethod]
-    public void GetVendor_ReturnsVendor_String()
+    public void GetTitle_ReturnsTitle_String()
     {
       DateTime orderDate = new DateTime(2022, 7, 15);
       Order newOrder = new Order("Ricky's", "Bread Reorder", 75, orderDate);
-      string result = newOrder.Vendor;
+      string result = newOrder.Title;
       Assert.AreEqual("Ricky's", result);
     }
 
