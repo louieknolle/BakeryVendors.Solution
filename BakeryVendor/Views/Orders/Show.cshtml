@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>@Model["vendor"].VendorName Order Details: </h1>
+
+<h2>@Model["order"].Title</h2>
+<h2>@Model["order"].Description</h2>
+<h2>@Model["order"].Loaves loaves of bread</h2>
+<h2>@Model["order"].Pastry pastries</h2>
+<h2>$ @Model["order"].Description balance owed</h2>
+<h2>Order placed on @Model["order"].Date</h2>
+<h3>Category: @Model["category"].Name</h3>
+
+<a href='/categories/@Model["category"].Id/items/new'>Add another order for this vendor</a>
+<a href='/categories'>View all vendor</a>
