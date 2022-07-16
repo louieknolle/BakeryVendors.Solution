@@ -6,12 +6,12 @@ using BakeryVendor.Models;
 namespace BakeryVendor.Tests 
 {
   [TestClass]
-  public class VendorTests 
+  public class VendorTests : IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Order.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -30,6 +30,16 @@ namespace BakeryVendor.Tests
       string resultVendorDescr = newVendor.VendorDescription;
       Assert.AreEqual(name, resultVendor);
       Assert.AreEqual(description, resultVendorDescr);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Jenny's";
+      string description = "gluten free bakery";
+      Vendor newVendor = new Vendor(name, description);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
     }
 
 
