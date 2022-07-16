@@ -12,11 +12,47 @@ namespace BakeryVendor.Models
     public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(string title, string description, int price, DateTime date)
+    public static int CalculateOrderTotal(int numberLoaves, int numberPastry)
+    {
+      int priceBread;
+      int pricePastry;
+      int orderTotalPrice;
+      
+      if (numberLoaves < 100)
+      {
+        priceBread = 3;
+      } 
+      else if (numberLoaves >= 100 && numberLoaves < 200)
+      {
+        priceBread = 2;
+      }
+      else 
+      {
+        priceBread = 1;
+      }
+
+      if (numberPastry < 100)
+      {
+        pricePastry = 4;
+      } 
+      else if (numberPastry >= 100 && numberPastry < 200)
+      {
+        pricePastry = 3;
+      }
+      else 
+      {
+        pricePastry = 2;
+      }
+
+      return orderTotalPrice = (numberLoaves * priceBread) + (numberPastry * pricePastry);
+
+    }
+
+    public Order(string title, string description, int numberLoaves, int numberPastry, DateTime date)
     {
       Title = title;
       Description  = description;
-      Price = price;
+      Price = CalculateOrderTotal(numberLoaves, numberPastry);
       Date = date;
       _instances.Add(this);
       Id = _instances.Count;

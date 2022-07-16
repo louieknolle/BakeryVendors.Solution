@@ -65,7 +65,7 @@ namespace BakeryVendor.Tests
     public void AddItem_AssociatesItemWithCategory_ItemList()
     {
       DateTime orderDate = new DateTime(2022, 7, 15);
-      Order newOrder = new Order("J's", "Bread Reorder", 75, orderDate);
+      Order newOrder = new Order("J's", "Bread Reorder", 7, 5, orderDate);
       List<Order> newList = new List<Order> { newOrder };
       Vendor newVendor = new Vendor("J's", "restaurant");
       newVendor.AddItem(newOrder);
