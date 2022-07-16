@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using BakeryVendor.Models;
 using System.Collections.Generic;
 
 namespace BakeryVendor.Controllers
 {
   public class OrdersController : Controller
   {
-
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
@@ -17,7 +16,7 @@ namespace BakeryVendor.Controllers
     [HttpPost("/orders/delete")]
     public ActionResult DeleteAll()
     {
-      Item.ClearAll();
+      Order.ClearAll();
       return View();
     }
 

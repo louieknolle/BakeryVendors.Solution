@@ -4,14 +4,12 @@
 
 @using BakeryVendor.Models;
 
-<h3>All current orders for this vendor:</h3>
+<h3>All current orders for @Model["vendor"].VendorName:</h3>
 
 <ol>
 @foreach (Order order in @Model["orders"])
 {
-  <li> Type:<a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
-  <li><p>Balance due</p><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Price</a></li>
-  <li><p>Order date:</p><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Date</a></li>
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
 }
 </ol>
 
