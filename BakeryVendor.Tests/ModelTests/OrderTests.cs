@@ -11,8 +11,17 @@ namespace BakeryVendor.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("test");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+
+    [TestMethod]
+    public void GetVendor_ReturnsVendor_String()
+    {
+      string vendor = "Ralph's Deli";
+      Order newOrder = new Order(vendor);
+      string result = newOrder.Vendor;
+      Assert.AreEqual(vendor, result);
     }
   }
 }
