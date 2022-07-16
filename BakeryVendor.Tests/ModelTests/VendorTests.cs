@@ -61,6 +61,18 @@ namespace BakeryVendor.Tests
       Assert.AreEqual(newVendor2, result);
     }
 
+    [TestMethod]
+    public void AddItem_AssociatesItemWithCategory_ItemList()
+    {
+      DateTime orderDate = new DateTime(2022, 7, 15);
+      Order newOrder = new Order("J's", "Bread Reorder", 75, orderDate);
+      List<Order> newList = new List<Order> { newOrder };
+      Vendor newVendor = new Vendor("J's", "restaurant");
+      newVendor.AddItem(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
+
 
   }
 }
