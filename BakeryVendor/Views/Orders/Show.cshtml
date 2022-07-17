@@ -2,14 +2,21 @@
   Layout = "_Layout";
 }
 
- <h1>@Model["vendor"].VendorName Order Details: </h1>
-
-<h2>@Model["order"].Title</h2>
-<h2>@Model["order"].Description</h2>
-<h2>@Model["order"].Loaves loaves of bread</h2>
-<h2>@Model["order"].Pastry pastries</h2>
-<h2>$@Model["order"].Price balance due</h2>
-<h2>Order placed on @Model["order"].Date</h2>
-
-<a href='/vendors/@Model["vendor"].Id/items/new'>Add another order for @Model["vendor"].VendorName</a>
-<a href='/vendors'>View all vendors</a>
+<div class="container">
+  <div class="vendorListHeader">
+    <h1>@Model["vendor"].VendorName Order Details: </h1>
+  </div>
+  <div class="vendorList">
+    <h2>🍞 @Model["order"].Title</h2>
+    <h2>🍞 @Model["order"].Description</h2>
+    <h2>🍞 @Model["order"].Loaves loaves of bread</h2>
+    <h2>🍞 @Model["order"].Pastry pastries</h2>
+    <h2>🍞 $@Model["order"].Price balance due</h2>
+    <h2>🍞 Order placed on @Model["order"].Date</h2>
+  </div>
+  <div class="vendorReturnHome">
+    <a href='/vendors/@Model["vendor"].Id/items/new'>Add another order for @Model["vendor"].VendorName</a>
+    <a href='/vendors'>View all vendors</a>
+  </div>
+  <img class="smallLogo" src="~/img/bakerylogo.png">
+</div>

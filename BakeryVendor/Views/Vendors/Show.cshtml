@@ -3,16 +3,20 @@
 }
 
 @using BakeryVendor.Models;
-
-<h3>All current orders for @Model["vendor"].VendorName:</h3>
-
+<div class="container">
+  <div class="vendorListHeader">
+    <h3>All current orders for @Model["vendor"].VendorName:</h3>
+  </div>
 <ol>
 @foreach (Order order in @Model["orders"])
 {
   <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
 }
 </ol>
-
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order for this vendor</a></p>
-<p><a href='/vendors'>Go back to list of all vendors</a></p>
-<p><a href='/'>Return to main screen</a></p>
+  <div class="ordersLinks">
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order for this vendor</a></p>
+    <p><a href='/vendors'>Go back to list of all vendors</a></p>
+    <p><a href='/'>Return to main screen</a></p>
+  </div>
+  <img src="~/img/bakerylogo.png">
+</div>

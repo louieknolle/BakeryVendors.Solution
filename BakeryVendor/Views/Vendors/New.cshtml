@@ -1,18 +1,27 @@
 @{
   Layout = "_Layout";
 }
-
-<h1>New Vendor</h1>
-<p>Create new vendor below:</p>
-
-<form action="/vendors" method="post">
-  <label for="vendorVendorName">Name of Vendor:</label>
-  <input id="vendorVendorName" name="vendorVendorName" type="text">
-  <label for="vendorVendorDescription">Description of vendor:</label>
-  <input id="vendorVendorDescription" name="vendorVendorDescription" type="text">
-
-  <button type="submit">Add vendor</button>
-</form>
-
-<p><a href="/">Main screen</a></p>
-<p><a href="/vendors">View vendors</a></p>
+<div class="container">
+  <div class="vendorListHeader">
+    <h1>New Vendor</h1>
+  </div>
+  <div class="vendorList newVendor">
+    <p>Create new vendor below:</p>
+    <form action="/vendors" method="post">
+      <div>
+      <label for="vendorVendorName">Name of Vendor:</label>
+      <input id="vendorVendorName" name="vendorVendorName" type="text">
+      </div>
+      <div>
+      <label for="vendorVendorDescription">Description of vendor:</label>
+      <input id="vendorVendorDescription" name="vendorVendorDescription" type="text">
+      </div>
+      <div>
+      <button class="addVendorBtn" type="submit">Add vendor</button>
+      </div>
+    </form>
+  </div>
+  <p><a href="/">Main screen</a></p>
+  <p><a href="/vendors">View vendors</a></p>
+  <img class="smallLogo" src="~/img/bakerylogo.png">
+</div>

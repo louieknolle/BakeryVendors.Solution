@@ -1,21 +1,35 @@
 @{
   Layout = "_Layout";
 }
-
-<h1>Add a new item to @Model.VendorName</h1>
-
-<form action="/vendors/@Model.Id/orders" method="post">
-  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
-  <label for="title">Order Title:</label>
-  <input id="title" name="title" type="text">
-  <label for="description">Order Description:</label>
-  <input id="description" name="description" type="text">
-  <label for="numberLoaves">Number of loaves of bread ordered:</label>
-  <input id="numberLoaves" name="numberLoaves" type="number">
-  <label for="numberPastry">Number of pastry to be ordered:</label>
-  <input id="numberPastry" name="numberPastry" type="number">
-  <label for="date">Date of order:</label>
-  <input id="date" name="date" type="date">
-  
-  <button type='submit'>Add Order</button>
-</form>
+<div class="container">
+  <div class="vendorListHeader">
+    <h1>Add New Order for @Model.VendorName</h1>
+  </div>
+  <form action="/vendors/@Model.Id/orders" method="post">
+    <div>
+      <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+    </div>
+    <div>
+      <label for="title">Order Title:</label>
+      <input id="title" name="title" type="text">
+    </div>
+    <div>
+      <label for="description">Order Description:</label>
+      <input id="description" name="description" type="text">
+    </div>
+    <div>
+      <label for="numberLoaves">Number of loaves of bread ordered:</label>
+      <input id="numberLoaves" name="numberLoaves" type="number">
+    </div>
+    <div>
+      <label for="numberPastry">Number of pastry to be ordered:</label>
+      <input id="numberPastry" name="numberPastry" type="number">
+    </div>
+    <div>
+      <label for="date">Date of order:</label>
+      <input id="date" name="date" type="date">
+    </div>
+    <button class="addOrderBtn" type='submit'>Add Order</button>
+  </form>
+  <img class="smallLogo" src="~/img/bakerylogo.png">
+</div>
