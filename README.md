@@ -2,7 +2,7 @@
 
 #### By: Louie Knolle
 
-#### Allows the owner of the baker to track vendors and their orders
+#### Allows the owner of the bakery to track vendors and their orders
 
 ## Technologies Used
 
