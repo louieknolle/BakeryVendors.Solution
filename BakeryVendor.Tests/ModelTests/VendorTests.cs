@@ -72,7 +72,5 @@ namespace BakeryVendor.Tests
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
     }
-
-
   }
 }
